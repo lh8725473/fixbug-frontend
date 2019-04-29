@@ -31,16 +31,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Watch } from "vue-property-decorator";
-import { Mutation, State } from "vuex-class";
-import { userService } from "@/service/user-service";
+import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
+import { Mutation, State } from 'vuex-class';
+import { userService } from '@/service/user-service';
 
 @Component
 export default class Register extends Vue {
   ruleForm = {
-    username: "",
-    password: "",
-    email: ""
+    username: '',
+    password: '',
+    email: ''
   };
   submitForm() {
     if (
