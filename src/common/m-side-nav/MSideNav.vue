@@ -3,13 +3,14 @@
     <el-row>
       <el-col :span="24">
         <el-menu
-            @close="handleClose"
-            @open="handleOpen"
-            active-text-color="#ffd04b"
-            background-color="#545c64"
-            class="el-menu-vertical-demo"
-            default-active="2"
-            text-color="#fff">
+          @close="handleClose"
+          @open="handleOpen"
+          active-text-color="#ffd04b"
+          background-color="#545c64"
+          class="el-menu-vertical-demo"
+          default-active="2"
+          text-color="#fff"
+        >
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -47,29 +48,26 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
-  import { Mutation, State } from 'vuex-class';
+import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
+import { Mutation, State } from 'vuex-class';
 
-  @Component
-  export default class MSideNav extends Vue {
+@Component
+export default class MSideNav extends Vue {
+  sideNavData = [{ title: '导航一', path: '/', icon: 'el-icon-menu' }];
 
-    sideNavData = [
-      {title: '导航一', path: '/', icon: 'el-icon-menu'}
-    ];
-
-    handleOpen(key: any, keyPath: any) {
-      console.log(key, keyPath);
-    }
-
-    handleClose(key: any, keyPath: any) {
-      console.log(key, keyPath);
-    }
-
+  handleOpen(key: any, keyPath: any) {
+    console.log(key, keyPath);
   }
+
+  handleClose(key: any, keyPath: any) {
+    console.log(key, keyPath);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-  .side-nav {
-
-  }
+.side-nav {
+  width: 100%;
+  height: 100%;
+}
 </style>

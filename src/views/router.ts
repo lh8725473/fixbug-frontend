@@ -4,7 +4,6 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
-
   routes: [
     {
       path: '',
@@ -13,7 +12,10 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ './Home.vue'),
+      meta: {
+        auth: true
+      },
+      component: () => import(/* webpackChunkName: "home" */ './home/Home.vue')
     },
     {
       path: '/login',
@@ -21,7 +23,8 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "login" */ './Login.vue'),
+      component: () =>
+        import(/* webpackChunkName: "login" */ './login/Login.vue')
     },
     {
       path: '/register',
@@ -29,7 +32,8 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "register" */ './Register.vue'),
-    },
-  ],
+      component: () =>
+        import(/* webpackChunkName: "register" */ './register/Register.vue')
+    }
+  ]
 });

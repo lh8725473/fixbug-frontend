@@ -6,5 +6,5 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 export const CONFIG = {
-  host: isProd ? 'http://localhost:8000' : 'http://localhost:8080'
+  host: isProd ? 'http://localhost:8000' : 'http://localhost:3001'
 };

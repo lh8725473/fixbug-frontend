@@ -1,11 +1,11 @@
-# ele-ts
+# fix-bug
 
 ## manage
 
 ```
     assets          // 资源
     components      // 公共组件
-    core            // 核心组件模块
+    common          // 核心组件模块
     service         // ajax
     store           // 数据管理
     styles          // scss样式
@@ -14,17 +14,19 @@
 ```
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
-
