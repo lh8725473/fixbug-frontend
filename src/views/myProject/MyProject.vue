@@ -16,18 +16,18 @@ export default class MyProject extends Vue {
     username: '',
     password: ''
   };
-  myProject = 'myProject11'
-  myProjectList = []
+  myProject = 'myProject11';
+  myProjectList = [];
 
   created() {
-    this.getProjectList()
+    this.getProjectList();
   }
 
   getProjectList () {
     userService.getProjectList()
       .then((res: any) => {
-        console.log(res)
-        this.myProjectList = res.projectList
+        console.log(res);
+        this.myProjectList = res.projectList;
       });
   }
   submitForm() {
@@ -40,7 +40,7 @@ export default class MyProject extends Vue {
         .login(this.ruleForm.username, this.ruleForm.password)
         .then((res: any) => {
           console.log(res);
-          this.$router.push('/home')
+          this.$router.push('/home');
         });
     }
   }

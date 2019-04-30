@@ -2,12 +2,12 @@
  * index
  * @author guobin201314@gmail.com on 2019-04-20
  */
-import Vue from 'vue'
-import Vuex, { Store } from 'vuex'
-import actions from './actions'
-import mutations from './mutations'
-import state from './state'
-import getters from './getters'
+import Vue from 'vue';
+import Vuex, { Store } from 'vuex';
+import actions from './actions';
+import mutations from './mutations';
+import state from './state';
+import getters from './getters';
 // modules
 
 Vue.use(Vuex);
@@ -22,4 +22,4 @@ const store: Store<any> = new Vuex.Store({
   }
 });
 
-export default store
+export default store;

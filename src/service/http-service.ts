@@ -17,9 +17,9 @@ httpService.interceptors.request.use(
     // if (store.getters.token) {
     //   config.headers['X-Token'] = store.getters.token;
     // }
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('token');
     if (token) {
-      config.headers.authorization = 'Bearer ' + token
+      config.headers.authorization = 'Bearer ' + token;
     }
     return config;
   },

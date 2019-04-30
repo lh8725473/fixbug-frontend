@@ -56,7 +56,7 @@ export default class Register extends Vue {
         )
         .then((res: any) => {
           console.log(res);
-          this.$router.push('/login')
+          this.$router.push('/login');
         });
     }
   }
