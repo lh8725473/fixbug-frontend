@@ -21,6 +21,10 @@ export class UserService {
     return this.http.post('/user/register', { username, password, email });
   }
 
+  getProjectList() {
+    return this.http.get('/project/list');
+  }
+
   logout() {}
 
   getUserInfo() {}
