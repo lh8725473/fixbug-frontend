@@ -5,6 +5,7 @@
 
 import { MutationTree } from 'vuex';
 import { RootStateTypes } from './types';
+import { User } from '@/types';
 
 const mutations: MutationTree<RootStateTypes> = {
   SET_AUTHOR(state: RootStateTypes, data: string) {
@@ -13,6 +14,12 @@ const mutations: MutationTree<RootStateTypes> = {
   SET_TOKEN(state: RootStateTypes, data: string) {
     state.token = data;
   },
+  SET_LOGIN(state: RootStateTypes, data: boolean) {
+    state.login = data;
+  },
+  SET_USER(state: RootStateTypes, data: User) {
+    state.user = data;
+  }
 };
 
 export default mutations;

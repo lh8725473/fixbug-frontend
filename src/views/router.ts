@@ -7,22 +7,30 @@ export default new Router({
   routes: [
     {
       path: '',
-      redirect: 'home',
+      redirect: 'home'
     },
     {
       path: '/home',
       name: 'home',
       meta: {
-        auth: true,
+        auth: true
       },
       component: () => import(/* webpackChunkName: "home" */ './home/Home.vue'),
       redirect: '/home/myProject',
       children: [
         {
+          path: 'project',
+          name: 'project',
+          component: () => import(/* webpackChunkName: "ProjectManage" */ '@/module/project/ProjectManage.vue'),
+          meta: {
+            auth: true
+          }
+        },
+        {
           path: 'myProject',
           name: 'myProject',
           component: () => import(/* webpackChunkName: "myProject" */ '@/views/myProject/MyProject.vue'),
-          meta: { title: '我的项目', icon: 'icon-wodewenjian1', name: '我的项目', auth: true }
+          meta: {title: '我的项目', icon: 'icon-wodewenjian1', name: '我的项目', auth: true}
         }
       ]
     },
@@ -33,7 +41,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "login" */ './login/Login.vue'),
+          import(/* webpackChunkName: "login" */ './login/Login.vue')
     },
     {
       path: '/register',
@@ -42,7 +50,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "register" */ './register/Register.vue'),
-    },
-  ],
+          import(/* webpackChunkName: "register" */ './register/Register.vue')
+    }
+  ]
 });

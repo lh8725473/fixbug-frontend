@@ -1,39 +1,37 @@
 <template>
-  <div class="">
-    MHeader
+  <div class="m-header">
+    <div class="m-header-left">
+      <h1>fix-bug</h1>
+    </div>
+    <div class="m-header-right">
+      <el-button type="primary" @click="doOut">退出登录</el-button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
-import { Mutation, State } from 'vuex-class';
+  import { Component, Vue } from 'vue-property-decorator';
+  import { userService } from '@/service/user-service';
 
-@Component
-export default class MHeader extends Vue {
+  @Component
+  export default class MHeader extends Vue {
 
-  @State('author') public stateAuthor: string;
-
-  @Mutation('SET_AUTHOR') public mutationAuthor: any;
-
-  @Watch('data')
-  public onDataChanged(val: string, oldVal: string) {
-  }
-
-  @Emit('reset')
-  public onReset(n: number) {
-  }
-
-  public created() {
+    doOut() {
+      userService.logout();
+      this.$router.push({
+        path: '/login'
+      });
+    }
 
   }
-
-  public mounted() {
-
-  }
-
-}
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .m-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
 </style>

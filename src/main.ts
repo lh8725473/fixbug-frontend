@@ -3,7 +3,6 @@ import Vue from './el-ui';
 import './registerServiceWorker';
 import store from './store/index';
 import router from './views/router';
-
 // element 组件
 import { Loading, Message, MessageBox, Notification } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -21,12 +20,21 @@ Vue.prototype.$prompt = MessageBox.prompt;
 
 Vue.config.productionTip = false;
 router.beforeEach((to: any, from: any, next: () => void) => {
-  console.log(to);
-  next();
+  if (to.meta.auth) {
+    if (store.state.login) {
+      next();
+    } else {
+      router.push({
+        path: '/login'
+      });
+    }
+  } else {
+    next();
+  }
 });
 
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: (h) => h(App)
 }).$mount('#app');

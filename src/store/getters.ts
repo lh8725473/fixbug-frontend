@@ -9,6 +9,8 @@ import { RootStateTypes } from './types';
 const getters: GetterTree<RootStateTypes, any> = {
   author: (state: RootStateTypes) => state.author,
   token: (state: RootStateTypes) => state.token,
+  login: (state: RootStateTypes) => state.login,
+  user: (state: RootStateTypes) => state.user
 };
 
 export default getters;

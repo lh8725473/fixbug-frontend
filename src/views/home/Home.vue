@@ -5,7 +5,7 @@
         <m-side-nav></m-side-nav>
       </el-aside>
       <el-container>
-        <el-header>
+        <el-header class="home-header">
           <m-header></m-header>
         </el-header>
         <el-main>
@@ -17,29 +17,30 @@
 </template>
 
 <script lang="ts">
-import MHeader from '@/common/m-header/MHeader.vue';
-import MSideNav from '@/common/m-side-nav/MSideNav.vue';
-import { Component, Vue } from 'vue-property-decorator';
+  import MHeader from '@/common/m-header/MHeader.vue';
+  import MSideNav from '@/common/m-side-nav/MSideNav.vue';
+  import { Component, Vue } from 'vue-property-decorator';
 
-@Component({
-  components: {
-    MSideNav,
-    MHeader,
-  },
-})
-export default class Home extends Vue {
-  public created() {}
-
-  getUserData() {
-    console.log('name');
+  @Component({
+    components: {
+      MSideNav,
+      MHeader
+    }
+  })
+  export default class Home extends Vue {
   }
-}
 </script>
 
 <style lang="scss" scoped>
-.full-page {
-  .aside {
-    background: rgb(84, 92, 100);
+  .full-page {
+    background: #f0f2f5;
+
+    .aside {
+      background: rgb(84, 92, 100);
+    }
+
+    .home-header {
+      background: #ffffff;
+    }
   }
-}
 </style>
