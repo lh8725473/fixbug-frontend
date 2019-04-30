@@ -1,5 +1,5 @@
-import { httpService } from './http-service';
 import { AxiosInstance } from 'axios';
+import { httpService } from './http-service';
 
 /**
  * auth-service
@@ -13,17 +13,17 @@ export class UserService {
     this.http = httpService;
   }
 
-  login(username: string, password: string) {
+  public login(username: string, password: string) {
     return this.http.post('/user/login', { username, password });
   }
 
-  register(username: string, password: string, email: string) {
+  public register(username: string, password: string, email: string) {
     return this.http.post('/user/register', { username, password, email });
   }
 
-  logout() {}
+  public logout() {}
 
-  getUserInfo() {}
+  public getUserInfo() {}
 }
 
 export const userService = new UserService();

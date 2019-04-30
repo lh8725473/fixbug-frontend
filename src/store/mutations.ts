@@ -3,8 +3,8 @@
  * @author guobin201314@gmail.com on 2019-04-28
  */
 
-import { RootStateTypes } from './types';
 import { MutationTree } from 'vuex';
+import { RootStateTypes } from './types';
 
 const mutations: MutationTree<RootStateTypes> = {
   SET_AUTHOR(state: RootStateTypes, data: string) {
@@ -12,7 +12,7 @@ const mutations: MutationTree<RootStateTypes> = {
   },
   SET_TOKEN(state: RootStateTypes, data: string) {
     state.token = data;
-  }
+  },
 };
 
 export default mutations;

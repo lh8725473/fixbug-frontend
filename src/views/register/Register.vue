@@ -31,18 +31,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
-import { Mutation, State } from 'vuex-class';
 import { userService } from '@/service/user-service';
+import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
+import { Mutation, State } from 'vuex-class';
 
 @Component
 export default class Register extends Vue {
-  ruleForm = {
+  public ruleForm = {
     username: '',
     password: '',
-    email: ''
+    email: '',
   };
-  submitForm() {
+  public submitForm() {
     if (
       this.ruleForm.username.length > 4 &&
       this.ruleForm.password.length > 4
@@ -52,14 +52,14 @@ export default class Register extends Vue {
         .register(
           this.ruleForm.username,
           this.ruleForm.password,
-          this.ruleForm.email
+          this.ruleForm.email,
         )
         .then((res: any) => {
           console.log(res);
         });
     }
   }
-  resetForm() {}
+  public resetForm() {}
 }
 </script>
 

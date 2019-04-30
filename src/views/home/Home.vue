@@ -17,25 +17,29 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import MSideNav from '@/common/m-side-nav/MSideNav.vue';
 import MHeader from '@/common/m-header/MHeader.vue';
+import MSideNav from '@/common/m-side-nav/MSideNav.vue';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
     MSideNav,
-    MHeader
-  }
+    MHeader,
+  },
 })
 export default class Home extends Vue {
-  created() {}
+  public created() {}
+
+  getUserData() {
+    console.log('name');
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .full-page {
   .aside {
-    background: bisque;
+    background: rgb(84, 92, 100);
   }
 }
 </style>

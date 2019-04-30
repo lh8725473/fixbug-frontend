@@ -48,18 +48,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
+import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
 import { Mutation, State } from 'vuex-class';
 
 @Component
 export default class MSideNav extends Vue {
-  sideNavData = [{ title: '导航一', path: '/', icon: 'el-icon-menu' }];
+  public sideNavData = [{ title: '导航一', path: '/', icon: 'el-icon-menu' }];
 
-  handleOpen(key: any, keyPath: any) {
+  public handleOpen(key: any, keyPath: any) {
     console.log(key, keyPath);
   }
 
-  handleClose(key: any, keyPath: any) {
+  public handleClose(key: any, keyPath: any) {
     console.log(key, keyPath);
   }
 }

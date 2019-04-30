@@ -1,13 +1,13 @@
-import Vue from './el-ui';
-import router from './views/router';
-import store from './store/index';
-import './registerServiceWorker';
 import App from './App.vue';
+import Vue from './el-ui';
+import './registerServiceWorker';
+import store from './store/index';
+import router from './views/router';
 
-import './styles/common.scss';
 // element 组件
 import { Loading, Message, MessageBox, Notification } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import './styles/common.scss';
 
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;

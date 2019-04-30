@@ -6,7 +6,7 @@ import { RootStateTypes } from './types';
 
 const state: RootStateTypes = {
   author: 'admin',
-  token: ''
+  token: '',
 };
 
 export default state;

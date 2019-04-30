@@ -2,14 +2,14 @@
  * http-service
  * @author guobin201314@gmail.com on 2019-04-20
  */
+import { CONFIG } from '@/service/config';
 import axios, { AxiosInstance } from 'axios';
 import { Message } from 'element-ui';
-import { CONFIG } from '@/service/config';
 import store from '../store/index';
 
 export const httpService: AxiosInstance = axios.create({
   baseURL: CONFIG.host,
-  timeout: 15000
+  timeout: 15000,
 });
 
 httpService.interceptors.request.use(
@@ -21,7 +21,7 @@ httpService.interceptors.request.use(
   },
   (error: any) => {
     Promise.reject(error);
-  }
+  },
 );
 
 httpService.interceptors.response.use(
@@ -33,7 +33,7 @@ httpService.interceptors.response.use(
       Message({
         message: res.errorMsg || 'error',
         type: 'error',
-        duration: 5 * 1000
+        duration: 5 * 1000,
       });
       return Promise.reject(res.errorMsg || 'error');
     }
@@ -42,8 +42,8 @@ httpService.interceptors.response.use(
     Message({
       message: error,
       type: 'error',
-      duration: 3 * 1000
+      duration: 3 * 1000,
     });
     return Promise.reject(error);
-  }
+  },
 );

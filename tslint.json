@@ -1,5 +1,5 @@
 {
-  "defaultSeverity": "warning",
+  "defaultSeverity": "error",
   "extends": [
     "tslint:recommended"
   ],
@@ -23,10 +23,9 @@
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": false,
     "trailing-comma": false,
-    "no-console": false,
     "member-ordering": false,
+    "no-console": false,
     "no-empty": false,
-    "semicolon": false,
     "prefer-for-of": false,
     "no-parameter-properties": false,
     "no-use-before-declare": false,

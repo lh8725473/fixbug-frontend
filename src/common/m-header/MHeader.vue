@@ -5,33 +5,33 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
-  import { Mutation, State } from 'vuex-class';
+import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
+import { Mutation, State } from 'vuex-class';
 
-  @Component
-  export default class MHeader extends Vue {
+@Component
+export default class MHeader extends Vue {
 
-    @State('author') stateAuthor: string;
+  @State('author') public stateAuthor: string;
 
-    @Mutation('SET_AUTHOR') mutationAuthor: any;
+  @Mutation('SET_AUTHOR') public mutationAuthor: any;
 
-    @Watch('data')
-    onDataChanged(val: string, oldVal: string) {
-    }
+  @Watch('data')
+  public onDataChanged(val: string, oldVal: string) {
+  }
 
-    @Emit('reset')
-    onReset(n: number) {
-    }
+  @Emit('reset')
+  public onReset(n: number) {
+  }
 
-    created() {
-
-    }
-
-    mounted() {
-
-    }
+  public created() {
 
   }
+
+  public mounted() {
+
+  }
+
+}
 </script>
 
 <style scoped>
