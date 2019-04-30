@@ -27,19 +27,33 @@
   import { Component, Vue } from 'vue-property-decorator';
   import { httpService } from '@/service/http-service';
   import { dateFormat } from '@/utils/utils';
+  import { Project } from '@/types/Project';
+  import { Mutation } from 'vuex-class';
+  import { ProjectMutation } from '@/store/types';
 
   @Component
   export default class AppProject extends Vue {
 
     currentDate = new Date();
-    projectList: any[] = [];
+    projectList: Project[] = [];
+
+    @Mutation('SET_PROJECT') projectMutation: ProjectMutation;
 
     deleteItem(data: any) {
-      console.log(data);
+      // httpService.post('/project/' + data._id).then((res: any) => {
+      //
+      // });
     }
 
     navToDetail(data: any) {
-      console.log(data);
+      localStorage.setItem('project', JSON.stringify(data));
+      this.projectMutation(new Project(data));
+      this.$router.push({
+        path: '/home/detail',
+        query: {
+          id: data._id
+        }
+      });
     }
 
     created() {

@@ -1,7 +1,9 @@
 import { AxiosInstance } from 'axios';
 import { httpService } from './http-service';
 import store from '@/store';
-import { UserData } from '@/types';
+import { UserData } from '@/types/UserData';
+import { User } from '@/types/User';
+
 
 /**
  * auth-service
@@ -13,7 +15,7 @@ export class UserService {
 
   public isLogin: boolean;
   public token: string | null;
-  public user: any;
+  public user: User | null;
 
   constructor() {
     this.http = httpService;
@@ -53,10 +55,11 @@ export class UserService {
   }
 
   private initState() {
-    if (localStorage.getItem('user')) {
+    const data = localStorage.getItem('user');
+    if (data) {
       this.isLogin = !!localStorage.getItem('token');
       this.token = localStorage.getItem('token');
-      this.user = localStorage.getItem('user');
+      this.user = JSON.parse(data);
     } else {
       this.isLogin = false;
       this.token = '';

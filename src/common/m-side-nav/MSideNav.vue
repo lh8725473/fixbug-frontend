@@ -13,15 +13,11 @@
             <i class="el-icon-menu"></i>
             <span slot="title">项目管理</span>
           </el-menu-item>
-          <el-menu-item index="2" @click="navTo('/home/project')">
+          <el-menu-item index="2" @click="navTo('/home/bugs')">
             <i class="el-icon-s-marketing"></i>
             <span slot="title">Bug管理</span>
           </el-menu-item>
-          <el-menu-item index="3" @click="navTo('/home/project')">
-            <i class="el-icon-circle-plus"></i>
-            <span slot="title">新增项目</span>
-          </el-menu-item>
-          <el-menu-item index="4" @click="navTo('/home/project')">
+          <el-menu-item index="4" @click="navTo('/home/userinfo')">
             <i class="el-icon-s-custom"></i>
             <span slot="title">个人资料</span>
           </el-menu-item>

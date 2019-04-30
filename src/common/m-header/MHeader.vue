@@ -2,8 +2,10 @@
   <div class="m-header">
     <div class="m-header-left">
       <h1>fix-bug</h1>
+
     </div>
     <div class="m-header-right">
+      <span>{{user.username}}</span>
       <el-button type="primary" @click="doOut">退出登录</el-button>
     </div>
   </div>
@@ -11,10 +13,15 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
+  import { Getter } from 'vuex-class';
   import { userService } from '@/service/user-service';
+  import { User } from '@/types/User';
 
   @Component
   export default class MHeader extends Vue {
+
+    @Getter author: string;
+    @Getter user: User;
 
     doOut() {
       userService.logout();

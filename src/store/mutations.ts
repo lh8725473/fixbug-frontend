@@ -5,7 +5,8 @@
 
 import { MutationTree } from 'vuex';
 import { RootStateTypes } from './types';
-import { User } from '@/types';
+import { User } from '@/types/User';
+import { Project } from '@/types/Project';
 
 const mutations: MutationTree<RootStateTypes> = {
   SET_AUTHOR(state: RootStateTypes, data: string) {
@@ -19,6 +20,9 @@ const mutations: MutationTree<RootStateTypes> = {
   },
   SET_USER(state: RootStateTypes, data: User) {
     state.user = data;
+  },
+  SET_PROJECT(state: RootStateTypes, data: Project) {
+    state.project = data;
   }
 };
 

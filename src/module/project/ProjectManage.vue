@@ -1,7 +1,7 @@
 <template>
   <div class="project-manage">
     <div class="inline-page">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tabs v-model="activeName">
         <el-tab-pane label="所有项目" name="first">
           <all-project v-if="activeName === 'first'"></all-project>
         </el-tab-pane>
@@ -25,13 +25,7 @@
     }
   })
   export default class ProjectManage extends Vue {
-
     activeName = 'first';
-
-    handleClick() {
-      console.log(this.activeName);
-    }
-
   }
 </script>
 

@@ -27,6 +27,38 @@ export default new Router({
           }
         },
         {
+          path: 'detail',
+          name: 'detail',
+          component: () => import(/* webpackChunkName: "detail" */ '@/module/project/DetailProject.vue'),
+          meta: {
+            auth: true
+          }
+        },
+        {
+          path: 'addbug',
+          name: 'addbug',
+          component: () => import(/* webpackChunkName: "AddBugs" */ '@/module/bugs/AddBugs.vue'),
+          meta: {
+            auth: true
+          }
+        },
+        {
+          path: 'bugs',
+          name: 'bugs',
+          component: () => import(/* webpackChunkName: "BugManage" */ '@/module/bugs/BugManage.vue'),
+          meta: {
+            auth: true
+          }
+        },
+        {
+          path: 'userinfo',
+          name: 'userinfo',
+          component: () => import(/* webpackChunkName: "UserInfo" */ '@/module/user/UserInfo.vue'),
+          meta: {
+            auth: true
+          }
+        },
+        {
           path: 'myProject',
           name: 'myProject',
           component: () => import(/* webpackChunkName: "myProject" */ '@/views/myProject/MyProject.vue'),

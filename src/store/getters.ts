@@ -10,7 +10,8 @@ const getters: GetterTree<RootStateTypes, any> = {
   author: (state: RootStateTypes) => state.author,
   token: (state: RootStateTypes) => state.token,
   login: (state: RootStateTypes) => state.login,
-  user: (state: RootStateTypes) => state.user
+  user: (state: RootStateTypes) => state.user,
+  project: (state: RootStateTypes) => state.project
 };
 
 export default getters;

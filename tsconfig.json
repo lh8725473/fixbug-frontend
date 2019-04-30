@@ -19,6 +19,7 @@
     "allowSyntheticDefaultImports": true,
     // 定义一个变量就必须给它一个初始值
     "strictPropertyInitialization": false,
+    "strictFunctionTypes": true,
     // 允许编译javascript文件
     "allowJs": true,
     // 是否包含可以用于 debug 的 sourceMap
