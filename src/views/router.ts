@@ -16,6 +16,15 @@ export default new Router({
         auth: true,
       },
       component: () => import(/* webpackChunkName: "home" */ './home/Home.vue'),
+      redirect: '/home/myProject',
+      children: [
+        {
+          path: 'myProject',
+          name: 'myProject',
+          component: () => import(/* webpackChunkName: "myProject" */ '@/views/myProject/MyProject.vue'),
+          meta: { title: '我的项目', icon: 'icon-wodewenjian1', name: '我的项目', auth: true }
+        }
+      ]
     },
     {
       path: '/login',

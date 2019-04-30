@@ -55,6 +55,8 @@ export default class Home extends Vue {
         .login(this.ruleForm.username, this.ruleForm.password)
         .then((res: any) => {
           console.log(res);
+          localStorage.setItem('token', res.token);
+          this.$router.push('/home');
         });
     }
   }

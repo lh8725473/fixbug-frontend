@@ -14,8 +14,12 @@ export const httpService: AxiosInstance = axios.create({
 
 httpService.interceptors.request.use(
   (config: any) => {
-    if (store.getters.token) {
-      config.headers['X-Token'] = store.getters.token;
+    // if (store.getters.token) {
+    //   config.headers['X-Token'] = store.getters.token;
+    // }
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.authorization = 'Bearer ' + token;
     }
     return config;
   },
